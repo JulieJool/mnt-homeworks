@@ -9,16 +9,16 @@
 ## Основная часть
 
 1. Попробуйте запустить playbook на окружении из `test.yml`, зафиксируйте значение, которое имеет факт `some_fact` для указанного хоста при выполнении playbook.
-![1](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/08-ansible-01-base/img/1.png)     
+![1](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/08-ansible-01-base/img/1.png)      
 
 2. Найдите файл с переменными (group_vars), в котором задаётся найденное в первом пункте значение, и поменяйте его на `all default fact`.
-![2](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/08-ansible-01-base/img/2.png)     
+![2](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/08-ansible-01-base/img/2.png)      
 
 3. Воспользуйтесь подготовленным (используется `docker`) или создайте собственное окружение для проведения дальнейших испытаний.
-![3](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/08-ansible-01-base/img/3.png)    
+![3](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/08-ansible-01-base/img/3.png)      
 
 4. Проведите запуск playbook на окружении из `prod.yml`. Зафиксируйте полученные значения `some_fact` для каждого из `managed host`.
-![4](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/08-ansible-01-base/img/4.png)   
+![4](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/08-ansible-01-base/img/4.png)     
 
 5. Добавьте факты в `group_vars` каждой из групп хостов так, чтобы для `some_fact` получились значения: для `deb` — `deb default fact`, для `el` — `el default fact`.
 6.  Повторите запуск playbook на окружении `prod.yml`. Убедитесь, что выдаются корректные значения для всех хостов.
