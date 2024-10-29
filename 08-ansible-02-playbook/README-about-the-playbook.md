@@ -7,17 +7,18 @@ A playbook made by a student of Netology DevOps Course.
 ## Description               
 This Ansible Playbook is designed for automated installation and configuration of ClickHouse databases and the Vector logging system on remote servers. The script handles the downloading of necessary packages and their installation, the creation of configuration files (and allows you to configure it as well).
 
-### Installation                   
-This ansible playbook supports the following,
+---     
+
+This ansible playbook supports the following,              
 - Download and install the necessary RPM packages for ClickHouse (clickhouse-server service is automatically restarted after installation),         
 - Create logs database for Clickhouse,       
 - download and install the RPM package for Vector (vector service is automatically restarted after the new configuration is applied).          
 
 ### Contents                 
-`site.yml`: The main Playbook that includes the installation and configuration of ClickHouse and Vector,
-`inventory/prod.yml`: An inventory file containing descriptions of hosts for deployment,
-`vector/vars.yml` and `clickhouse/vars.yml`: A variables file containing software versions and other settings,
-`templates/vector.yml.j2`: A Jinja2 template for the Vector configuration file.
+`site.yml`: The main Playbook that includes the installation and configuration of ClickHouse and Vector,             
+`inventory/prod.yml`: An inventory file containing descriptions of hosts for deployment,            
+`vector/vars.yml` and `clickhouse/vars.yml`: A variables file containing software versions and other settings,             
+`templates/vector.yml.j2`: A Jinja2 template for the Vector configuration file.            
 
 ### Prerequisite                
 - **Ansible 2.9+**,
