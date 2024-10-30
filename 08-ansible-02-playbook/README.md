@@ -40,7 +40,11 @@
 
 10. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-02-playbook` на фиксирующий коммит, в ответ предоставьте ссылку на него.
 
+<<<<<<< HEAD
 [tag 08-ansible-02-playbook](https://github.com/JulieJool/mnt-homeworks/tree/08-ansible-02-playbook)       
+=======
+[tag 08-ansible-02-playbook](https://github.com/JulieJool/mnt-homeworks/tree/08-ansible-02-playbook)    
+>>>>>>> 7021802b3c5f4e71a27f782ed9b77a9a0a8d9b0a
 
 ---
 
