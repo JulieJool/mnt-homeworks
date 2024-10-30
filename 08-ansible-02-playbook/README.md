@@ -40,6 +40,8 @@
 
 10. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-02-playbook` на фиксирующий коммит, в ответ предоставьте ссылку на него.
 
+[tag 08-ansible-02-playbook](https://github.com/JulieJool/mnt-homeworks/tree/08-ansible-02-playbook)       
+
 ---
 
 ### Как оформить решение задания
