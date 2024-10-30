@@ -37,6 +37,11 @@
 10. Выложите playbook в репозиторий.
 11. В ответе дайте ссылки на оба репозитория с roles и одну ссылку на репозиторий с playbook.
 
+[The Playbook altogether](https://github.com/JulieJool/mnt-homeworks/tree/MNT-video/08-ansible-04-role/playbook)      
+[My Vector-role repo](https://github.com/JulieJool/vector-role)      
+[My Lighthouse-role repo](https://github.com/JulieJool/lighthouse-role)         
+
+
 ---
 
 ### Как оформить решение задания
