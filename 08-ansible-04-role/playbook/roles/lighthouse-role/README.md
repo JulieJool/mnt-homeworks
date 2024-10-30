@@ -1,4 +1,4 @@
-Role Name
+Lighthouse-role
 =========
 
 This role allows you to install Lighthouse on CentOS 8+ via a [github repo](https://github.com/VKCOM/lighthouse.git).        
