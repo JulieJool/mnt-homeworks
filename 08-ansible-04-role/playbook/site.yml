@@ -3,10 +3,12 @@
   hosts: clickhouse
   roles:
     - ansible-clickhouse
+
 - name: Install vector
   hosts: vector
   roles:
     - vector-role
+
 - name: Install lighthouse
   hosts: lighthouse
   handlers:
@@ -36,7 +38,7 @@
       ansible.builtin.template:
         src: nginx.conf.j2
         dest: /etc/nginx/nginx.conf
-        mode: 0644
+        mode: "0644"
   roles:
     - lighthouse-role
   post_tasks:
@@ -45,5 +47,5 @@
       ansible.builtin.template:
         src: lighthouse_nginx.conf.j2
         dest: /etc/nginx/conf.d/lighthouse.conf
-        mode: 0644
+        mode: "0644"
       notify: Nginx restart
