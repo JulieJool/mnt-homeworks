@@ -1,31 +1,59 @@
-Role Name
+Vector-role
 =========
 
-A brief description of the role goes here.
-
-Requirements
-------------
-
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+This role allows you to install Vector on CentOS 8+.
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
-
-Dependencies
-------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+| vars | Description | Value | Location |
+|------|------------|---|---|
+| vector_version | Vector version to install | "0.42.0" | defaults/main.yml |
+| vector_rpm_version | Vector rmp version to use for installation | "0.42.0-1" | defaults/main.yml |
+| vector_clickhouse_ip | An instance for Clickhouse to work with Vector | for ex., "localhost" | defaults/main.yml |
+| clickhouse_db_name | Clickhouse DB name for logs | "logs"  | defaults/main.yml |
+| clickhouse_table_name | Clickhouse table name to write down logs | "data_logs" | defaults/main.yml |
+| vector_config | Vector configuration settings | wwritten down below, may be changed | default/main.yml |
+| vector_url | URL for Vector packages | "https://yum.vector.dev/stable/vector-0/x86_64/vector-{{ vector_rpm_version }}.x86_64.rpm" | vars/main.yml |
+| vector_config_dir | Vector config file location | "/etc/vector" | vars/main.yml |
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+```yml
+---
+- name: Get vector distrib
+  ansible.builtin.get_url:
+        url: "https://yum.vector.dev/stable/vector-0/x86_64/vector-{{ vector_rpm_version }}.x86_64.rpm"
+        dest: "./vector-{{ vector_version }}-1.x86_64.rpm"
+        mode: "0644"
+- name: Install vector packages
+  become: true
+  ansible.builtin.yum:
+        name:
+          - vector-{{ vector_version }}-1.x86_64.rpm
+        disable_gpg_check: true
+- name: Apply vector template
+  become: true
+  ansible.builtin.template:
+    src: templates/vector.yml.j2
+    dest: "{{ vector_config_dir }}/vector.yml"
+    mode: "0644"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_gid }}"
+    validate: vector validate --no-environment --config-yaml %s
+- name: Create vector systemd unit
+      become: true
+      ansible.builtin.template:
+        src: templates/vector.service.j2
+        dest: /usr/lib/systemd/system/vector.service
+        mode: "0644"
+        owner: "{{ ansible_user_id }}"
+        group: "{{ ansible_user_gid }}"
+        backup: true
+      notify: Start vector service
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+```
 
 License
 -------
@@ -35,4 +63,4 @@ BSD
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Julie Teplov, a Netology DevOps project.
