@@ -1,0 +1,5 @@
+---
+# tasks file for lighthouse-role
+- include_tasks: create_lighthouse_config_file.yml
+- include_tasks: get_lighthouse_from_a_git_repo.yml
+ 

@@ -1,0 +1,13 @@
+---
+- name: Get vector distrib
+  ansible.builtin.get_url:
+        url: "https://yum.vector.dev/stable/vector-0/x86_64/vector-{{ vector_rpm_version }}.x86_64.rpm"
+        dest: "./vector-{{ vector_version }}-1.x86_64.rpm"
+        mode: "0644"
+
+- name: Install vector packages
+  become: true
+  ansible.builtin.yum:
+        name:
+          - vector-{{ vector_version }}-1.x86_64.rpm
+        disable_gpg_check: true

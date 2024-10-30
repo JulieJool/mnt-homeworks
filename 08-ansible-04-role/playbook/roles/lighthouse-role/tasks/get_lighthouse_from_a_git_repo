@@ -1,0 +1,6 @@
+---
+- name: Get lighthouse from a git repo
+  ansible.builtin.git:
+    repo: "{{ lighthouse_url }}"
+    dest: "{{ lighthouse_dir }}"
+    version: master

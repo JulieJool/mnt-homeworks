@@ -1,0 +1,5 @@
+---
+# tasks file for vector-role
+- include_tasks: get_vector_distrib_and_install.yml
+- include_tasks: apply_vector_template.yml
+- include_tasks: create_vector_systemd_unit.yml
