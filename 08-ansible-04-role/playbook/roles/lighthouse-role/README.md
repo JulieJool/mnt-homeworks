@@ -1,31 +1,67 @@
 Role Name
 =========
 
-A brief description of the role goes here.
+This role allows you to install Lighthouse on CentOS 8+ via a [github repo](https://github.com/VKCOM/lighthouse.git).        
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+`Git` and `NGINX` must be pre-installed and configured before running this role. 
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+| vars | Description | Value | Location |
+|------|------------|---|---|
+| lighthouse_dir | a directory to store Lighthouse files | "/home/{{ ansible_user_id }}/lighthouse" | defaults/main.yml |
+| lighthouse_url | URL of Lighthouse repo | "https://github.com/VKCOM/lighthouse.git" | vars/main.yml |
 
-Dependencies
-------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+```yml
+- name: Install lighthouse
+  hosts: lighthouse
+  handlers:
+    - name: Nginx restart
+      become: true
+      ansible.builtin.service:
+        name: nginx
+        state: restarted
+  pre_tasks:
+    - name: Install git for lighthouse
+      become: true
+      ansible.builtin.yum:
+        name: git
+        state: present
+    - name: Install epel-release for lighthouse
+      become: true
+      ansible.builtin.yum:
+        name: epel-release
+        state: present
+    - name: Install nginx for lighthouse
+      become: true
+      ansible.builtin.yum:
+        name: nginx
+        state: present
+    - name: Apply nginx config for lighthouse
+      become: true
+      ansible.builtin.template:
+        src: nginx.conf.j2
+        dest: /etc/nginx/nginx.conf
+        mode: "0644"
+  roles:
+    - lighthouse-role
+  post_tasks:
+    - name: Apply lighthouse config
+      become: true
+      ansible.builtin.template:
+        src: lighthouse_nginx.conf.j2
+        dest: /etc/nginx/conf.d/lighthouse.conf
+        mode: "0644"
+      notify: Nginx restart
+```
 
 License
 -------
@@ -35,4 +71,4 @@ BSD
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Julie Teplov, a Netology DevOps project.
