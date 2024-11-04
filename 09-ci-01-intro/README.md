@@ -38,6 +38,12 @@
 
 ---
 
+![bugs](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/09-ci-01-intro/bugs.png)      
+[bugs](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/09-ci-01-intro/bugs.xml)     
+
+![other tasks](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/09-ci-01-intro/other%20tasks.png)      
+[other tasks](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/09-ci-01-intro/other%20tasks.xml)     
+
 ### Как оформить решение задания
 
 Выполненное домашнее задание пришлите в виде ссылки на .md-файл в вашем репозитории.
