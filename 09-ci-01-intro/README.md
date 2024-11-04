@@ -39,10 +39,10 @@
 ---
 
 ![bugs](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/09-ci-01-intro/bugs.png)      
-[bugs](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/09-ci-01-intro/bugs.xml)     
+[bugs.xml](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/09-ci-01-intro/bugs.xml)     
 
 ![other tasks](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/09-ci-01-intro/other%20tasks.png)      
-[other tasks](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/09-ci-01-intro/other%20tasks.xml)     
+[other tasks.xml](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/09-ci-01-intro/other%20tasks.xml)     
 
 ### Как оформить решение задания
 
