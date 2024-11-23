@@ -103,6 +103,10 @@ Nagios - Pull
 
 P.S.: если при запуске некоторые контейнеры будут падать с ошибкой - проставьте им режим `Z`, например
 `./data:/var/lib:Z`
+
+![1](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/10-monitoring-02-systems/1.png)          
+
+
 #
 8. Перейдите в веб-интерфейс Chronograf (http://localhost:8888) и откройте вкладку Data explorer.
         
@@ -112,6 +116,10 @@ P.S.: если при запуске некоторые контейнеры б�
     - Вверху вы можете увидеть запрос, аналогичный SQL-синтаксису. Поэкспериментируйте с запросом, попробуйте изменить группировку и интервал наблюдений.
 
 Для выполнения задания приведите скриншот с отображением метрик утилизации cpu из веб-интерфейса.
+
+![2](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/10-monitoring-02-systems/2.png)      
+
+
 #
 9. Изучите список [telegraf inputs](https://github.com/influxdata/telegraf/tree/master/plugins/inputs). 
 Добавьте в конфигурацию telegraf следующий плагин - [docker](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/docker):
@@ -141,6 +149,16 @@ P.S.: если при запуске некоторые контейнеры б�
 веб-интерфейсе базы telegraf.autogen . Там должны появиться метрики, связанные с docker.
 
 Факультативно можете изучить какие метрики собирает telegraf после выполнения данного задания.
+
+![3](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/10-monitoring-02-systems/3.png)     
+
+Дополнительный плагин:
+![4](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/10-monitoring-02-systems/4.png)     
+![5](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/10-monitoring-02-systems/5.png)     
+
+[измененный docker-compose.yml](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/10-monitoring-02-systems/docker-compose.yml)       
+[telegraf.conf](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/10-monitoring-02-systems/telegraf.conf)       
+
 
 ## Дополнительное задание (со звездочкой*) - необязательно к выполнению
 
