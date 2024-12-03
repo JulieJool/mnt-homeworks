@@ -26,6 +26,9 @@
 1. Подключите поднятый вами prometheus, как источник данных.
 1. Решение домашнего задания — скриншот веб-интерфейса grafana со списком подключенных Datasource.
 
+![](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/10-monitoring-03-grafana/img/1.png)       
+
+
 ## Задание 2
 
 Изучите самостоятельно ресурсы:
@@ -43,10 +46,22 @@
 
 Для решения этого задания приведите promql-запросы для выдачи этих метрик, а также скриншот получившейся Dashboard.
 
+![](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/10-monitoring-03-grafana/img/2.1.png)       
+![](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/10-monitoring-03-grafana/img/2.2.png)       
+![](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/10-monitoring-03-grafana/img/2.3.png)       
+![](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/10-monitoring-03-grafana/img/2.4.png)       
+
+
+
 ## Задание 3
 
 1. Создайте для каждой Dashboard подходящее правило alert — можно обратиться к первой лекции в блоке «Мониторинг».
 1. В качестве решения задания приведите скриншот вашей итоговой Dashboard.
+
+![](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/10-monitoring-03-grafana/img/3.1.png)       
+![](https://github.com/JulieJool/mnt-homeworks/blob/MNT-video/10-monitoring-03-grafana/img/3.2.png)       
+
+
 
 ## Задание 4
 
